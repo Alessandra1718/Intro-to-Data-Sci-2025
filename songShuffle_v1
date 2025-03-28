@@ -1,0 +1,59 @@
+#Start code here - this is v1 ( block version ) 
+import random
+# declare all variables that will store number of songs in here :
+folkNum = 0
+rapHipNum = 0
+rap90Num = 0
+rockNum = 0
+print("Welcome to song shuffling playlist program . ")
+songNumber = int(input("How many songs would you like to generate? ( Enter a number please) : "))
+song_title_file = ["Amber", "Sundress", "1000 blunts", "A little Trauma Can Be Illuminating ", "Redrum", "How do u want it", "Fashion Killa", "Back in Black", "Highway to Hell", "iniko( freestyle)"]
+# stopped at number 11.
+song_genre_file = ["Folk", "Rap / Hip-Hop", "Rap / Hip-Hop", "Rap / Hip-Hop", "Rap / Hip-Hop", "90's rap", "Rap / Hip-Hop", "Rock", "Rock", "Rap / Hip-Hop"]
+print("This program will all songs and genre as they are generated, not after ( not yet ) please excuse the mess : ")
+print("Our playlist is: ")
+# For every turn of the code-> from the number that the user
+# picked, generate a song ( rand int) and store it somewhere.
+for i in range(0, songNumber):
+  # local variable ( idk if this is safe )
+  genRandInt = random.randint(0, len(song_title_file)-1 )
+  print(genRandInt)
+  print(song_genre_file[genRandInt])
+  print(song_title_file[genRandInt])
+  if song_genre_file[genRandInt] == "Folk":
+    # Add 1 to the number of folk songs generated
+    folkNum += 1
+  elif song_genre_file[genRandInt] == "Rap / Hip-Hop":
+    rapHipNum += 1
+  elif song_genre_file[genRandInt] == "90's rap":
+    rap90Num += 1
+  elif song_genre_file[genRandInt] == "Rock":
+    rockNum += 1
+  else:
+    print("The generated song does not have a variable for its genre. This code has not been updated or something went wrong. ")
+print("---------------------------")
+# print in one line : the total number of [var] songs, and then
+# as a STR -> the number contained in the respective variable
+print("Total number of  Folk songs was : " + str(folkNum))
+print("Total number of  rock songs was : " + str(rockNum))
+print("Total number of  90's rap songs was : " + str(rap90Num))
+print("Total number of  rap/hip hop  songs was : " + str(rapHipNum))
+print("---------------------------")
+print("Original number of songs generated: ")
+print(songNumber)
+print("---------------------------")
+# Find the exp probability -> issuies with extent of rounding in EduBlock
+# ( 1 decimal I think), divide the given stored Num / og generated Num
+expRockNum = rockNum / songNumber
+exp90rapNum = rap90Num / songNumber
+expFolkNum = folkNum / songNumber
+expRapHipNum = rapHipNum / songNumber
+# print the experimental prob of each song genre
+print("Experimental probability of rock songs is : " + str(expRockNum))
+# This needs to be rounded or something
+print("Experimental probability of folk songs is : " + str(expFolkNum))
+print("Experimental probability of rap/ hip hop songs is : " + str(expRapHipNum))
+# do better in the 90's convention naming -> keep more
+# order to these variable names and order to declaration
+print("Experimental probability of 90's rap songs is : " + str(exp90rapNum))
+print("---------------------------")
