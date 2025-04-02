@@ -1,6 +1,7 @@
 #Start code here
 import random
-# declare all variables that will store number of songs in here :
+altRockNum = 0
+# declare all variables that will store number of songs in here
 folkNum = 0
 rapHipNum = 0
 rap90Num = 0
@@ -21,7 +22,7 @@ dancePopNum = 0
 edmNum = 0
 # Electronic rock/dance
 electroRockNum = 0
-electroPop = 0
+electroPopNum = 0
 gameSoundNum = 0
 hardRockNum = 0
 houseNum = 0
@@ -40,8 +41,8 @@ global genRandInt
 genRandInt = 0
 print("Welcome to song shuffling playlist program . ")
 songNumber = int(input("How many songs would you like to generate? ( Enter a number please) : "))
-song_title_file = r"Amber, Sundress, 1000 blunts, A little Trauma Can Be Illuminating, Redrum, How do u want it, Fashion Killa, Back in Black, Highway to Hell, iniko( freestyle), Song of the South, Cold Duck Time, Scars To Your Beautiful, On Up, Nutshell, Too late to cry, Inverno, Love me harder, Parumenyk Menk haykak, Wake Me Up, Beauitiful Things, Mmhmm, Sabbath bloody sabbath, Whos calling, Gravity, Men of War, Just the Way You Are, Talking to the Moon, Somewhere in Brooklyn, SORROWS, Subwoofer Lullaby, Before he Cheats, I hate Alabama, Fortunate Son, Afterglow(Hazels Song), I Can Fly Away, Paradise, Saving up, American Pie, Super Gore Nest, Not You Too, The Cranberries, We are the people, Springsteen, World hold on, TAKE IT OFF, Everlong, Ivy, Pyramids, Fly Me to the Moon, Unforgettable, Troubled Times, Rumba Frenesi, My shot, House Again, Headlock, Аидахар, No Role Modelz, Too Deep For the Intro, Carolina in my mind, She's Country, Tweak shit, pt.2, ALICE, Where you are, Imperial March, Bandit, Runaway, Si antes te hubiera conocido, California Girls, freestyle 3, Not Like Us, Money trees, Crazy Story pt2, Crazy Story pt.3, Green Rythmico, MF DOOM, Disease, Onna Come Up, F.N, Samba De Verão, Dead homies, Randomly, Super Urus, Houston we got a problem, Free Bird, Stoned, Me Gustas Tu, All I want for christmas, Payphone, Ain’t No Mountain High Enough, One Beer, Beat it, BFG Division, Harbinger, Rip and Tear, I Took a Pill In Abiza, ballin, Rhyme Dust, Da fonk, Kickstart my heart, Hasta La Raiz, Smells Like Teen Spirit, Homesick, Clouds, Dystopia, frontin, Southernplayalisticadillacmuzik, LA PATRULLA, Hey There Delilah, Killing in the Name, Flyest in the Building, 15 minutes, Tar Baby, Is It A Crime?, Seasons, Big Mon, inner light, Follow Molly, Robot Getaway, RUN!, Leach, Saturn, The less i know the better, House of the Rising Sun, In M\y Life, Hey Jude, Hold On, Heavy, Words, It ain’t me babe, World So Cold, Interstellar Traveler, Courtesy of the red white and blue, Drops of Jupiter, Butterfly Effect, She, New Magic Wand, Moon Dance, Back on Your BS, Все будет Хорошо, Broken Window Serenade, Seven Nation Army, Thunder man, Jocelyn Flores, Snooze ya Lose, Neon, Knee Deep, Something in the Orange"
-song_genre_file = r"Folk, Rap / Hip-Hop, Rap / Hip-Hop, Rap / Hip-Hop, Rap / Hip-Hop, 90's rap, Rap / Hip-Hop, Rock, Rock, Rap / Hip-Hop, Country, Jazz, Pop, Alternative Rock, Rock, Blue Grass, Classical, Pop, Pop, EDM, Pop, Rap / Hip-Hop, Rock, Rap / Hip-Hop, R&B, Classical, Pop, Pop, Reggae, Rock, House, Country, Country, Classic Rock, Hard Rock, Alternative / Indie, House, House, Folk, Heavy Metal, R&B, Rock, Electronic Rock Dance / Electro Pop, Country, House, House, Rock, R&B, R&B, Jazz, Rap / Hip-Hop, Rock, Cumbia, R&B, Country, Pop, Rap / Hip-Hop, Rap / Hip-Hop, Rap / Hip-Hop, Folk, Country, Rap / Hip-Hop, Rap / Hip-Hop, House, Classical, Rap / Hip-Hop, Rap / Hip-Hop, Merengue / Alternative Indie, Pop, Rap / Hip-Hop, Rap / Hip-Hop, Pop, Rap / Hip-Hop, Rap / Hip-Hop, Classical, Rap / Hip-Hop, Pop, Rap / Hip-Hop, Rap / Hip-Hop, Bossa Nova / Samba, Rap / Hip-Hop, Rap / Hip-Hop, Rap / Hip-Hop, Country, Rock, R&B, Latin Reggae, Pop, Pop, Reggae, Rap / Hip-Hop, Pop, Heavy Metal, Heavy Metal, Heavy Metal, Dance Pop, Rap / Hip-Hop, House, House, Heavy Metal, Electropop, Rock, Pop, Pop, Rock, Rap / Hip-Hop, 90's rap, Corridos, Pop Rock, Rock, Rap / Hip-Hop, Pop, Classic Soul, R&B, Alternative / Indie, Blue Grass, Game Soundtrack, EDM, EDM, EDM, Alternative Rock, R&B, Alternative / Indie, Blues, Classic Rock, Pop Rock, R&B, Indie Pop, Pop, Folk, Rock, House, Country, Dance Pop, Rap / Hip-Hop, Rap / Hip-Hop, Pop, Jazz, Alternative, Pop, Country, Rock, Rap / Hip-Hop, Rap / Hip-Hop, Rap / Hip-Hop, Pop, Country, Country"
+song_title_file = r" Amber, Sundress, 1000 blunts, A little Trauma Can Be Illuminating, Redrum, How do u want it, Fashion Killa, Back in Black, Highway to Hell, iniko( freestyle), Song of the South, Cold Duck Time, Scars To Your Beautiful, On Up, Nutshell, Too late to cry, Inverno, Love me harder, Parumenyk Menk haykak, Wake Me Up, Beauitiful Things, Mmhmm, Sabbath bloody sabbath, Whos calling, Gravity, Men of War, Just the Way You Are, Talking to the Moon, Somewhere in Brooklyn, SORROWS, Subwoofer Lullaby, Before he Cheats, I hate Alabama, Fortunate Son, Afterglow(Hazels Song), I Can Fly Away, Paradise, Saving up, American Pie, Super Gore Nest, Not You Too, The Cranberries, We are the people, Springsteen, World hold on, TAKE IT OFF, Everlong, Ivy, Pyramids, Fly Me to the Moon, Unforgettable, Troubled Times, Rumba Frenesi, My shot, House Again, Headlock, Аидахар, No Role Modelz, Too Deep For the Intro, Carolina in my mind, She's Country, Tweak shit, pt.2, ALICE, Where you are, Imperial March, Bandit, Runaway, Si antes te hubiera conocido, California Girls, freestyle 3, Not Like Us, Money trees, Crazy Story pt2, Crazy Story pt.3, Green Rythmico, MF DOOM, Disease, Onna Come Up, F.N, Samba De Verão, Dead homies, Randomly, Super Urus, Houston we got a problem, Free Bird, Stoned, Me Gustas Tu, All I want for christmas, Payphone, Ain’t No Mountain High Enough, One Beer, Beat it, BFG Division, Harbinger, Rip and Tear, I Took a Pill In Abiza, ballin, Rhyme Dust, Da fonk, Kickstart my heart, Hasta La Raiz, Smells Like Teen Spirit, Homesick, Clouds, Dystopia, frontin, Southernplayalisticadillacmuzik, LA PATRULLA, Hey There Delilah, Killing in the Name, Flyest in the Building, 15 minutes, Tar Baby, Is It A Crime?, Seasons, Big Mon, inner light, Follow Molly, Robot Getaway, RUN!, Leach, Saturn, The less i know the better, House of the Rising Sun, In M\y Life, Hey Jude, Hold On, Heavy, Words, It ain’t me babe, World So Cold, Interstellar Traveler, Courtesy of the red white and blue, Drops of Jupiter, Butterfly Effect, She, New Magic Wand, Moon Dance, Back on Your BS, Все будет Хорошо, Broken Window Serenade, Seven Nation Army, Thunder man, Jocelyn Flores, Snooze ya Lose, Neon, Knee Deep, Something in the Orange"
+song_genre_file = r" Folk, Rap / Hip-Hop, Rap / Hip-Hop, Rap / Hip-Hop, Rap / Hip-Hop, 90's rap, Rap / Hip-Hop, Rock, Rock, Rap / Hip-Hop, Country, Jazz, Pop, Alternative Rock, Rock, Blue Grass, Classical, Pop, Pop, EDM, Pop, Rap / Hip-Hop, Rock, Rap / Hip-Hop, R&B, Classical, Pop, Pop, Reggae, Rock, House, Country, Country, Classic Rock, Hard Rock, Alternative / Indie, House, House, Folk, Heavy Metal, R&B, Rock, Electronic Rock Dance / Electro Pop, Country, House, House, Rock, R&B, R&B, Jazz, Rap / Hip-Hop, Rock, Cumbia, R&B, Country, Pop, Rap / Hip-Hop, Rap / Hip-Hop, Rap / Hip-Hop, Folk, Country, Rap / Hip-Hop, Rap / Hip-Hop, House, Classical, Rap / Hip-Hop, Rap / Hip-Hop, Merengue / Alternative Indie, Pop, Rap / Hip-Hop, Rap / Hip-Hop, Pop, Rap / Hip-Hop, Rap / Hip-Hop, Classical, Rap / Hip-Hop, Pop, Rap / Hip-Hop, Rap / Hip-Hop, Bossa Nova / Samba, Rap / Hip-Hop, Rap / Hip-Hop, Rap / Hip-Hop, Country, Rock, R&B, Latin Reggae, Pop, Pop, Reggae, Rap / Hip-Hop, Pop, Heavy Metal, Heavy Metal, Heavy Metal, Dance Pop, Rap / Hip-Hop, House, House, Heavy Metal, Electropop, Rock, Pop, Pop, Rock, Rap / Hip-Hop, 90's rap, Corridos, Pop Rock, Rock, Rap / Hip-Hop, Pop, Classic Soul, R&B, Alternative / Indie, Blue Grass, Game Soundtrack, EDM, EDM, EDM, Alternative Rock, R&B, Alternative / Indie, Blues, Classic Rock, Pop Rock, R&B, Indie Pop, Pop, Folk, Rock, House, Country, Dance Pop, Rap / Hip-Hop, Rap / Hip-Hop, Pop, Jazz, Alternative, Pop, Country, Rock, Rap / Hip-Hop, Rap / Hip-Hop, Rap / Hip-Hop, Pop, Country, Country"
 # To format this list correctly, I'm calling the function
 # split() ( no actual eduBlock for this) and having
 # it 'sort' the list for me by splitting every comma.
@@ -96,7 +97,7 @@ for i in range(0, songNumber):
   elif song_genre_file[genRandInt] == " Electronic Rock Dance / Electro Pop":
     electroRockNum += 1
   elif song_genre_file[genRandInt] == " Electro Pop":
-    electroPop += 1
+    electroPopNum += 1
   elif song_genre_file[genRandInt] == " EDM":
     edmNum += 1
   elif song_genre_file[genRandInt] == " Dance Pop":
@@ -125,6 +126,8 @@ for i in range(0, songNumber):
     altIndieNum += 1
   elif song_genre_file[genRandInt] == " Indie Pop":
     indiePopNum += 1
+  elif song_genre_file[genRandInt] == " Alternative Rock":
+    altRockNum += 1
   else:
     print("The generated song does not have a variable for its genre. This code has not been updated or something went wrong. ")
 print("---------------------------")
@@ -146,7 +149,7 @@ print("Total number of  Country songs was : " + str(countryNum))
 print("Total number of  Cumbia  songs was : " + str(cumbiaNum))
 print("Total number of  Dance Pop  songs was : " + str(dancePopNum))
 print("Total number of  EDM  songs was : " + str(edmNum))
-print("Total number of  Electronic Pop  songs was : " + str(electroPop))
+print("Total number of  Electronic Pop  songs was : " + str(electroPopNum))
 print("Total number of  Electronic Rock (?)  songs was : " + str(electroRockNum))
 print("Total number of  Game Sountrack  songs was : " + str(gameSoundNum))
 print("Total number of  Hard Rock  songs was : " + str(hardRockNum))
@@ -160,6 +163,7 @@ print("Total number of  Pop  songs was : " + str(popNum))
 print("Total number of  Pop Rock  songs was : " + str(popRockNum))
 print("Total number of  Reggae  songs was : " + str(reggaeNum))
 print("Total number of  R&B  songs was : " + str(rnbNum))
+print("Total number of  Alternative Rock songs was : " + str(altRockNum))
 print("---------------------------")
 print("Original number of songs generated: ")
 print(songNumber)
@@ -178,8 +182,32 @@ expFolkNum = folkNum / songNumber
 expRapHipNum = rapHipNum / songNumber
 expAltInd = altIndieNum / songNumber
 expBlueGrass = blueGrassNum / songNumber
-expAltInd = altIndieNum / songNumber
-expAltInd = altIndieNum / songNumber
+expDancePop = dancePopNum / songNumber
+expCountry = countryNum / songNumber
+expHeavyMetal = heavyMetalNum / songNumber
+expBlues = bluesNum / songNumber
+expBossa = bossaNovaNum / songNumber
+expClassic = classicalNum / songNumber
+expClaRock = classicRockNum / songNumber
+expClaSoul = classicSoulNum / songNumber
+expCorridos = corridosNum / songNumber
+expCumbia = cumbiaNum / songNumber
+expEdm = edmNum / songNumber
+expElecRock = electroRockNum / songNumber
+expGameS = gameSoundNum / songNumber
+expHardRock = hardRockNum / songNumber
+expHouse = houseNum / songNumber
+expIndiePop = indiePopNum / songNumber
+expJazz = indiePopNum / songNumber
+expLatin = latinNum / songNumber
+expMerengue = merengueNum / songNumber
+expPop = popNum / songNumber
+expPopRock = popRockNum / songNumber
+expReggae = reggaeNum / songNumber
+expBlueGrass = blueGrassNum / songNumber
+expRNB = rnbNum / songNumber
+expElecPop = electroPopNum / songNumber
+expAltRock = altRockNum / songNumber
 # print the experimental prob of each song genre
 print("Experimental probability of rock songs is : " + str(expProb(rockNum, expRockNum)))
 # This needs to be rounded or something
@@ -188,4 +216,31 @@ print("Experimental probability of rap/ hip hop songs is : " + str(expRapHipNum)
 # do better in the 90's convention naming -> keep more
 # order to these variable names and order to declaration
 print("Experimental probability of 90's rap songs is : " + str(exp90rapNum))
+print("Experimental probability of country songs is : " + str(expCountry))
+print("Experimental probability of Heavy Metal songs is : " + str(expHeavyMetal))
+print("Experimental probability of Blues songs is : " + str(expBlues))
+print("Experimental probability of Blue Grass songs is : " + str(expBlueGrass))
+print("Experimental probability of Alternative Indie songs is : " + str(expAltInd))
+print("Experimental probability of Bossa Nova songs is : " + str(expBossa))
+print("Experimental probability of Classical Rock songs is : " + str(expClaRock))
+print("Experimental probability of Classical Soul songs is : " + str(expClaSoul))
+print("Experimental probability of Classic songs is : " + str(expClassic))
+print("Experimental probability of Corridos songs is : " + str(expCorridos))
+print("Experimental probability of Cumbia songs is : " + str(expCumbia))
+print("Experimental probability of Dance Pop songs is : " + str(expDancePop))
+print("Experimental probability of EDM songs is : " + str(expEdm))
+print("Experimental probability of Electronic Pop songs is : " + str(expElecPop))
+print("Experimental probability of Game Sountrack songs is : " + str(expGameS))
+print("Experimental probability of Electronic Rock songs is : " + str(expElecRock))
+print("Experimental probability of  Hard Rock songs is : " + str(expHardRock))
+print("Experimental probability of  House songs is : " + str(expHouse))
+print("Experimental probability of  Indie Pop songs is : " + str(expIndiePop))
+print("Experimental probability of  Jazz songs is : " + str(expJazz))
+print("Experimental probability of  Latin songs is : " + str(expLatin))
+print("Experimental probability of  Merengue songs is : " + str(expMerengue))
+print("Experimental probability of  Pop songs is : " + str(expPop))
+print("Experimental probability of  Pop Rock songs is : " + str(expPopRock))
+print("Experimental probability of  Reggae songs is : " + str(expReggae))
+print("Experimental probability of  R&B songs is : " + str(expRNB))
+print("Experimental probability of  Alternative Rock  songs is : " + str(expAltRock))
 print("---------------------------")
