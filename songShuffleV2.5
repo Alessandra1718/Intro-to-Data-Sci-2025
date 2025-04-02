@@ -1,0 +1,191 @@
+#Start code here
+import random
+# declare all variables that will store number of songs in here :
+folkNum = 0
+rapHipNum = 0
+rap90Num = 0
+rockNum = 0
+heavyMetalNum = 0
+altIndieNum = 0
+blueGrassNum = 0
+bluesNum = 0
+# This is Bossa Nova/ Samba -> I wanted to keep the variable name short
+bossaNovaNum = 0
+classicRockNum = 0
+classicSoulNum = 0
+classicalNum = 0
+corridosNum = 0
+countryNum = 0
+cumbiaNum = 0
+dancePopNum = 0
+edmNum = 0
+# Electronic rock/dance
+electroRockNum = 0
+electroPop = 0
+gameSoundNum = 0
+hardRockNum = 0
+houseNum = 0
+indiePopNum = 0
+jazzNum = 0
+# Latin Reggae number
+latinNum = 0
+# merengue/ alternaitve indie
+merengueNum = 0
+popNum = 0
+popRockNum = 0
+# R&B number
+rnbNum = 0
+reggaeNum = 0
+global genRandInt
+genRandInt = 0
+print("Welcome to song shuffling playlist program . ")
+songNumber = int(input("How many songs would you like to generate? ( Enter a number please) : "))
+song_title_file = r"Amber, Sundress, 1000 blunts, A little Trauma Can Be Illuminating, Redrum, How do u want it, Fashion Killa, Back in Black, Highway to Hell, iniko( freestyle), Song of the South, Cold Duck Time, Scars To Your Beautiful, On Up, Nutshell, Too late to cry, Inverno, Love me harder, Parumenyk Menk haykak, Wake Me Up, Beauitiful Things, Mmhmm, Sabbath bloody sabbath, Whos calling, Gravity, Men of War, Just the Way You Are, Talking to the Moon, Somewhere in Brooklyn, SORROWS, Subwoofer Lullaby, Before he Cheats, I hate Alabama, Fortunate Son, Afterglow(Hazels Song), I Can Fly Away, Paradise, Saving up, American Pie, Super Gore Nest, Not You Too, The Cranberries, We are the people, Springsteen, World hold on, TAKE IT OFF, Everlong, Ivy, Pyramids, Fly Me to the Moon, Unforgettable, Troubled Times, Rumba Frenesi, My shot, House Again, Headlock, Аидахар, No Role Modelz, Too Deep For the Intro, Carolina in my mind, She's Country, Tweak shit, pt.2, ALICE, Where you are, Imperial March, Bandit, Runaway, Si antes te hubiera conocido, California Girls, freestyle 3, Not Like Us, Money trees, Crazy Story pt2, Crazy Story pt.3, Green Rythmico, MF DOOM, Disease, Onna Come Up, F.N, Samba De Verão, Dead homies, Randomly, Super Urus, Houston we got a problem, Free Bird, Stoned, Me Gustas Tu, All I want for christmas, Payphone, Ain’t No Mountain High Enough, One Beer, Beat it, BFG Division, Harbinger, Rip and Tear, I Took a Pill In Abiza, ballin, Rhyme Dust, Da fonk, Kickstart my heart, Hasta La Raiz, Smells Like Teen Spirit, Homesick, Clouds, Dystopia, frontin, Southernplayalisticadillacmuzik, LA PATRULLA, Hey There Delilah, Killing in the Name, Flyest in the Building, 15 minutes, Tar Baby, Is It A Crime?, Seasons, Big Mon, inner light, Follow Molly, Robot Getaway, RUN!, Leach, Saturn, The less i know the better, House of the Rising Sun, In M\y Life, Hey Jude, Hold On, Heavy, Words, It ain’t me babe, World So Cold, Interstellar Traveler, Courtesy of the red white and blue, Drops of Jupiter, Butterfly Effect, She, New Magic Wand, Moon Dance, Back on Your BS, Все будет Хорошо, Broken Window Serenade, Seven Nation Army, Thunder man, Jocelyn Flores, Snooze ya Lose, Neon, Knee Deep, Something in the Orange"
+song_genre_file = r"Folk, Rap / Hip-Hop, Rap / Hip-Hop, Rap / Hip-Hop, Rap / Hip-Hop, 90's rap, Rap / Hip-Hop, Rock, Rock, Rap / Hip-Hop, Country, Jazz, Pop, Alternative Rock, Rock, Blue Grass, Classical, Pop, Pop, EDM, Pop, Rap / Hip-Hop, Rock, Rap / Hip-Hop, R&B, Classical, Pop, Pop, Reggae, Rock, House, Country, Country, Classic Rock, Hard Rock, Alternative / Indie, House, House, Folk, Heavy Metal, R&B, Rock, Electronic Rock Dance / Electro Pop, Country, House, House, Rock, R&B, R&B, Jazz, Rap / Hip-Hop, Rock, Cumbia, R&B, Country, Pop, Rap / Hip-Hop, Rap / Hip-Hop, Rap / Hip-Hop, Folk, Country, Rap / Hip-Hop, Rap / Hip-Hop, House, Classical, Rap / Hip-Hop, Rap / Hip-Hop, Merengue / Alternative Indie, Pop, Rap / Hip-Hop, Rap / Hip-Hop, Pop, Rap / Hip-Hop, Rap / Hip-Hop, Classical, Rap / Hip-Hop, Pop, Rap / Hip-Hop, Rap / Hip-Hop, Bossa Nova / Samba, Rap / Hip-Hop, Rap / Hip-Hop, Rap / Hip-Hop, Country, Rock, R&B, Latin Reggae, Pop, Pop, Reggae, Rap / Hip-Hop, Pop, Heavy Metal, Heavy Metal, Heavy Metal, Dance Pop, Rap / Hip-Hop, House, House, Heavy Metal, Electropop, Rock, Pop, Pop, Rock, Rap / Hip-Hop, 90's rap, Corridos, Pop Rock, Rock, Rap / Hip-Hop, Pop, Classic Soul, R&B, Alternative / Indie, Blue Grass, Game Soundtrack, EDM, EDM, EDM, Alternative Rock, R&B, Alternative / Indie, Blues, Classic Rock, Pop Rock, R&B, Indie Pop, Pop, Folk, Rock, House, Country, Dance Pop, Rap / Hip-Hop, Rap / Hip-Hop, Pop, Jazz, Alternative, Pop, Country, Rock, Rap / Hip-Hop, Rap / Hip-Hop, Rap / Hip-Hop, Pop, Country, Country"
+# To format this list correctly, I'm calling the function
+# split() ( no actual eduBlock for this) and having
+# it 'sort' the list for me by splitting every comma.
+song_title_file = song_title_file.split(',') # your own code
+song_genre_file = song_genre_file.split(',') # your own code
+print(len(song_genre_file))
+print(len(song_title_file))
+print("This program shows all songs as they are generated, and might be lengthy if lots of songs are requested. ")
+print("Our randomly generated playlist is: ")
+# For every turn of the code-> from the number that the user
+# picked, generate a song ( rand int) and store it somewhere.
+for i in range(0, songNumber):
+  # fix indexing issuies later, copy/paste change list NUM total
+  genRandInt = random.randint(0, (len(song_title_file) - 2))
+  print("This is the random number generated: ")
+  print(genRandInt)
+  print(song_genre_file[genRandInt])
+  print(song_title_file[genRandInt])
+  if song_genre_file[genRandInt] == " Folk":
+    # Add 1 to the number of folk songs generated
+    folkNum += 1
+  elif song_genre_file[genRandInt] == " Rap / Hip-Hop":
+    rapHipNum += 1
+  elif song_genre_file[genRandInt] == " 90's rap":
+    rap90Num += 1
+  elif song_genre_file[genRandInt] == " Rock":
+    rockNum += 1
+  elif song_genre_file[genRandInt] == " R&B":
+    rnbNum += 1
+  elif song_genre_file[genRandInt] == " Reggae":
+    reggaeNum += 1
+  elif song_genre_file[genRandInt] == " Pop Rock":
+    popRockNum += 1
+  elif song_genre_file[genRandInt] == " Pop":
+    popNum += 1
+  elif song_genre_file[genRandInt] == " Merengue / Alternative Indie":
+    merengueNum += 1
+  elif song_genre_file[genRandInt] == " Latin Reggae":
+    latinNum += 1
+  elif song_genre_file[genRandInt] == " Jazz":
+    jazzNum += 1
+  elif song_genre_file[genRandInt] == " Indie pop":
+    indiePopNum += 1
+  elif song_genre_file[genRandInt] == " House":
+    houseNum += 1
+  elif song_genre_file[genRandInt] == " Heavy Metal":
+    heavyMetalNum += 1
+  elif song_genre_file[genRandInt] == " Hard Rock":
+    hardRockNum += 1
+  elif song_genre_file[genRandInt] == " Game Soundtrack":
+    gameSoundNum += 1
+  elif song_genre_file[genRandInt] == " Electronic Rock Dance / Electro Pop":
+    electroRockNum += 1
+  elif song_genre_file[genRandInt] == " Electro Pop":
+    electroPop += 1
+  elif song_genre_file[genRandInt] == " EDM":
+    edmNum += 1
+  elif song_genre_file[genRandInt] == " Dance Pop":
+    dancePopNum += 1
+  elif song_genre_file[genRandInt] == " Cumbia":
+    cumbiaNum += 1
+  elif song_genre_file[genRandInt] == " Country":
+    countryNum += 1
+  elif song_genre_file[genRandInt] == " Corridos":
+    corridosNum += 1
+  elif song_genre_file[genRandInt] == " Classic Soul":
+    classicSoulNum += 1
+  elif song_genre_file[genRandInt] == " Classic Rock":
+    classicRockNum += 1
+  elif song_genre_file[genRandInt] == " Classical":
+    classicalNum += 1
+  elif song_genre_file[genRandInt] == " Bossa Nova / Samba":
+    bossaNovaNum += 1
+  elif song_genre_file[genRandInt] == " Blues":
+    bluesNum += 1
+  elif song_genre_file[genRandInt] == " Blue Grass":
+    blueGrassNum += 1
+  # I forgot indie pop and alternative as simple
+  # genres but I will add them later as I see fit.
+  elif song_genre_file[genRandInt] == " Alternative / Indie":
+    altIndieNum += 1
+  elif song_genre_file[genRandInt] == " Indie Pop":
+    indiePopNum += 1
+  else:
+    print("The generated song does not have a variable for its genre. This code has not been updated or something went wrong. ")
+print("---------------------------")
+# print in one line : the total number of [var] songs, and then
+# as a STR -> the number contained in the respective variable
+print("Total number of  Folk songs was : " + str(folkNum))
+print("Total number of  rock songs was : " + str(rockNum))
+print("Total number of  90's rap songs was : " + str(rap90Num))
+print("Total number of  rap/hip hop  songs was : " + str(rapHipNum))
+print("Total number of  Alternative Indie  songs was : " + str(altIndieNum))
+print("Total number of  Blue Grass  songs was : " + str(blueGrassNum))
+print("Total number of  Blues  songs was : " + str(bluesNum))
+print("Total number of  Bossa Nova  songs was : " + str(bossaNovaNum))
+print("Total number of  Classical  songs was : " + str(classicalNum))
+print("Total number of  Classic Rock  songs was : " + str(classicRockNum))
+print("Total number of  Classic Soul  songs was : " + str(classicSoulNum))
+print("Total number of  Corridos  songs was : " + str(corridosNum))
+print("Total number of  Country songs was : " + str(countryNum))
+print("Total number of  Cumbia  songs was : " + str(cumbiaNum))
+print("Total number of  Dance Pop  songs was : " + str(dancePopNum))
+print("Total number of  EDM  songs was : " + str(edmNum))
+print("Total number of  Electronic Pop  songs was : " + str(electroPop))
+print("Total number of  Electronic Rock (?)  songs was : " + str(electroRockNum))
+print("Total number of  Game Sountrack  songs was : " + str(gameSoundNum))
+print("Total number of  Hard Rock  songs was : " + str(hardRockNum))
+print("Total number of  Heavy Metal  songs was : " + str(heavyMetalNum))
+print("Total number of  House  songs was : " + str(houseNum))
+print("Total number of  Indie Pop  songs was : " + str(indiePopNum))
+print("Total number of  Jazz  songs was : " + str(jazzNum))
+print("Total number of  Latin  songs was : " + str(latinNum))
+print("Total number of  Merengue  songs was : " + str(merengueNum))
+print("Total number of  Pop  songs was : " + str(popNum))
+print("Total number of  Pop Rock  songs was : " + str(popRockNum))
+print("Total number of  Reggae  songs was : " + str(reggaeNum))
+print("Total number of  R&B  songs was : " + str(rnbNum))
+print("---------------------------")
+print("Original number of songs generated: ")
+print(songNumber)
+print("--------------------------------------------------")
+# function can do this all for us ( advanced
+# optimized) but you still have to call it. NOT DONE
+def expProb(stored, expResult): # your own code
+    expResult = round(stored/ songNumber, 6) # your own code
+    return float(expResult) # your own code
+print("---------------------------------------------------")
+# Find the exp probability -> issuies with extent of rounding in EduBlock
+# ( 1 decimal I think), divide the given stored Num / og generated Num
+expRockNum = rockNum / songNumber
+exp90rapNum = rap90Num / songNumber
+expFolkNum = folkNum / songNumber
+expRapHipNum = rapHipNum / songNumber
+expAltInd = altIndieNum / songNumber
+expBlueGrass = blueGrassNum / songNumber
+expAltInd = altIndieNum / songNumber
+expAltInd = altIndieNum / songNumber
+# print the experimental prob of each song genre
+print("Experimental probability of rock songs is : " + str(expProb(rockNum, expRockNum)))
+# This needs to be rounded or something
+print("Experimental probability of folk songs is : " + str(expFolkNum))
+print("Experimental probability of rap/ hip hop songs is : " + str(expRapHipNum))
+# do better in the 90's convention naming -> keep more
+# order to these variable names and order to declaration
+print("Experimental probability of 90's rap songs is : " + str(exp90rapNum))
+print("---------------------------")
